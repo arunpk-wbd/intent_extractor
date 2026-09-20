@@ -1,0 +1,170 @@
+loops:
+- id: LP-09
+  status: executing
+  branch: loop/LP-09
+  history:
+  - to: verifier-built
+    ts: '2026-09-18T15:47:48.594411+00:00'
+  - record: mutation_kill
+    value: 0.0
+    by: red-team-gate
+    verdict: FAIL
+    killed: 0
+    total: 7
+    ts: '2026-09-18T15:47:51.782744+00:00'
+  - record: mutation_kill
+    value: 0.0
+    by: red-team-gate
+    verdict: FAIL
+    killed: 0
+    total: 7
+    ts: '2026-09-18T15:58:32.612186+00:00'
+  - record: mutation_kill
+    value: 0.0
+    by: red-team-gate
+    verdict: FAIL
+    killed: 0
+    total: 7
+    ts: '2026-09-18T16:02:49.093675+00:00'
+  - record: mutation_kill
+    value: 0.4286
+    by: red-team-gate
+    verdict: FAIL
+    killed: 3
+    total: 7
+    ts: '2026-09-18T16:09:18.994903+00:00'
+  - record: mutation_kill
+    value: 1.0
+    by: red-team-gate
+    verdict: PASS
+    killed: 7
+    total: 7
+    ts: '2026-09-18T16:11:40.355377+00:00'
+  - to: red-team-passed
+    ts: '2026-09-18T16:12:28.980913+00:00'
+  - to: frozen
+    ts: '2026-09-18T16:12:29.125345+00:00'
+  - to: executing
+    ts: '2026-09-18T16:18:41.524237+00:00'
+    evidence:
+      launch: true
+      is_error: false
+      launched_commit: null
+  - record: mutation_kill
+    value: 1.0
+    by: red-team-gate
+    verdict: PASS
+    killed: 7
+    total: 7
+    ts: '2026-09-20T01:52:14.340314+00:00'
+  - record: mutation_kill
+    value: 1.0
+    by: red-team-gate
+    verdict: PASS
+    killed: 7
+    total: 7
+    ts: '2026-09-20T05:50:34.590234+00:00'
+  epic: CAP-1
+  story: S-01
+  class: standard
+  historical: false
+  deps: []
+  owns:
+    write:
+    - src/intent_extractor/spans.py
+    read:
+    - Verifier/tests/properties/test_lp09_span_resolvability.py
+    - src/intent_extractor/__init__.py
+    - conftest.py
+    - pyproject.toml
+    - contracts/LP-09-span-resolvability.md
+    - loops/LP-09/definition.md
+  mutation_kill: 1.0
+  iterations: 1
+- id: LP-03
+  status: frozen
+  branch: loop/LP-03
+  history:
+  - to: verifier-built
+    ts: '2026-09-20T07:04:58.864359+00:00'
+  - record: mutation_kill
+    value: 0.0
+    by: red-team-gate
+    verdict: FAIL
+    killed: 0
+    total: 10
+    ts: '2026-09-20T07:05:01.853725+00:00'
+  - record: mutation_kill
+    value: 0.4
+    by: red-team-gate
+    verdict: FAIL
+    killed: 4
+    total: 10
+    ts: '2026-09-20T07:28:10.149544+00:00'
+  - record: mutation_kill
+    value: 0.4
+    by: red-team-gate
+    verdict: FAIL
+    killed: 4
+    total: 10
+    ts: '2026-09-20T07:30:04.851898+00:00'
+  - record: mutation_kill
+    value: 0.4
+    by: red-team-gate
+    verdict: FAIL
+    killed: 4
+    total: 10
+    ts: '2026-09-20T07:32:00.775173+00:00'
+  - record: mutation_kill
+    value: 0.4
+    by: red-team-gate
+    verdict: FAIL
+    killed: 4
+    total: 10
+    ts: '2026-09-20T09:10:02.687459+00:00'
+  - reset_to: defined
+    from: verifier-built
+    by: unattributed
+    reason: contract v0.5 refold to 5-case env-matrix; re-author verifier and mutants
+    override: true
+    refreshed_definition: true
+    ts: '2026-09-20T13:43:50.944221+00:00'
+  - reset_to: defined
+    from: defined
+    by: unattributed
+    reason: refresh owns to v0.5 definition
+    override: true
+    refreshed_definition: true
+    ts: '2026-09-20T14:49:43.874109+00:00'
+  - to: verifier-built
+    ts: '2026-09-20T15:03:15.826494+00:00'
+  - record: mutation_kill
+    value: 1.0
+    by: red-team-gate
+    verdict: PASS
+    killed: 5
+    total: 5
+    ts: '2026-09-20T15:30:32.808784+00:00'
+  - to: red-team-passed
+    ts: '2026-09-20T15:30:32.817473+00:00'
+  - to: frozen
+    ts: '2026-09-20T15:38:50.530725+00:00'
+    evidence:
+      human_ack: v0.5; red-team 5/5 exact; ratified by Arun 2026-09-20
+  epic: CAP-1
+  story: S-01
+  class: standard
+  historical: false
+  deps:
+  - LP-01
+  owns:
+    write:
+    - src/intent_extractor/canonical.py
+    read:
+    - Verifier/tests/properties/test_lp03_canonical_determinism.py
+    - src/intent_extractor/__init__.py
+    - conftest.py
+    - pyproject.toml
+    - contracts/LP-03-canonical-determinism.md
+    - loops/LP-03/definition.md
+  mutation_kill: 1.0
