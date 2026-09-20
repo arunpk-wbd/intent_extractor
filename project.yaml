@@ -1,0 +1,27 @@
+# project.yaml — intent_extractor (product repo built by the Loop Engineering tool)
+project: intent-extractor
+paths:
+  registry: loops/registry.yaml
+  loops_dir: loops/
+  worktrees: worktrees/
+  contracts: contracts/
+  mutants: Red-Team/mutants/
+  tests: Verifier/tests/
+  protected_branches: [main]
+gates:
+  mutation_kill:
+    kernel: 0.85
+    standard: 0.70
+  human_ack_required: true
+budgets:
+  default: {max_iterations: 15, patience: 3, cost_usd: 15, wall_clock_h: 4}
+  classes:
+    kernel: {max_iterations: 25, cost_usd: 40}
+wave:
+  max_concurrent: 5
+merge:
+  reviewers: [arun]
+agent:
+  model: composer-2.5-fast
+  classes: {}
+  roles: {}
