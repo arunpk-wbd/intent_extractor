@@ -82,7 +82,7 @@ loops:
   mutation_kill: 1.0
   iterations: 1
 - id: LP-03
-  status: frozen
+  status: merged
   branch: loop/LP-03
   history:
   - to: verifier-built
@@ -151,6 +151,88 @@ loops:
     ts: '2026-09-20T15:38:50.530725+00:00'
     evidence:
       human_ack: v0.5; red-team 5/5 exact; ratified by Arun 2026-09-20
+  - to: executing
+    ts: '2026-09-20T16:11:07.500212+00:00'
+    evidence:
+      launch: true
+      is_error: false
+      launched_commit: null
+  - record: certified_metrics
+    spend_tokens: 328295
+    spend_tokens_by_kind:
+      launch: 37046
+      author-verifier: 162770
+      author-red-team: 128479
+    iterations: 1
+    model: composer-2.5-fast
+    models:
+    - composer-2.5-fast
+    model_mixed: false
+    model_provenance: declared
+    spend_tokens_by_role:
+      launch:
+        model: composer-2.5-fast
+        tokens: 37046
+      author-verifier:
+        model: composer-2.5-fast
+        tokens: 162770
+      author-red-team:
+        model: composer-2.5-fast
+        tokens: 128479
+    provenance: certified
+    by: controller
+    ts: '2026-09-20T16:11:18.947536+00:00'
+  - record: verifier_counts
+    passed: 5
+    failed: 0
+    errors: 0
+    total: 5
+    provenance: certified
+    by: controller
+    ts: '2026-09-20T16:11:18.947543+00:00'
+  - to: green
+    ts: '2026-09-20T16:11:18.947545+00:00'
+    evidence:
+      verifier:
+        passed: 5
+        failed: 0
+        errors: 0
+        skipped: 0
+        total: 5
+  - to: merge-review
+    ts: '2026-09-20T18:21:25.564308+00:00'
+    evidence:
+      scope: ok
+      head: 25e26082dd2af2dfa2fd16e11cfdb39471f76cb1
+  - record: certified_metrics
+    spend_tokens: 328295
+    spend_tokens_by_kind: &id001
+      launch: 37046
+      author-verifier: 162770
+      author-red-team: 128479
+    iterations: 1
+    model: composer-2.5-fast
+    models: &id002
+    - composer-2.5-fast
+    model_mixed: false
+    model_provenance: declared
+    spend_tokens_by_role: &id003
+      launch:
+        model: composer-2.5-fast
+        tokens: 37046
+      author-verifier:
+        model: composer-2.5-fast
+        tokens: 162770
+      author-red-team:
+        model: composer-2.5-fast
+        tokens: 128479
+    provenance: certified
+    by: controller
+    ts: '2026-09-21T06:52:57.353249+00:00'
+  - to: merged
+    ts: '2026-09-21T06:52:57.353373+00:00'
+    evidence:
+      merge_concluded: ok
   epic: CAP-1
   story: S-01
   class: standard
@@ -168,3 +250,17 @@ loops:
     - contracts/LP-03-canonical-determinism.md
     - loops/LP-03/definition.md
   mutation_kill: 1.0
+  spend_tokens: 328295
+  spend_tokens_by_kind: *id001
+  iterations: 1
+  model: composer-2.5-fast
+  models: *id002
+  model_mixed: false
+  model_provenance: declared
+  spend_tokens_by_role: *id003
+  verifier_counts:
+    passed: 5
+    failed: 0
+    errors: 0
+    total: 5
+    provenance: certified
